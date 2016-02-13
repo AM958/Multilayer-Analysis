@@ -1,0 +1,39 @@
+        graphFoundationPanel1 = new multilevel.view.graphFoundationPanel();
+        logTxtArea1 = new multilevel.view.logTextArea();
+    private multilevel.view.graphFoundationPanel graphFoundationPanel1;
+    private multilevel.view.logTextArea logTxtArea1;
+
+        ///////// http://stackoverflow.com/questions/13474678/right-click-to-select-text-jtextpane
+    
+    
+    
+    
+        copy.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selected = l.getSelectedText();
+                if(selected==null)
+                    return;
+                StringSelection clipString = new StringSelection(selected);
+                Clipboard clipbd = new Clipboard(selected);
+                clipbd.setContents(clipString,clipString);
+            }
+
+        }); 
+        pop.add(copy);
+        pop.addPopupMenuListener(new PopupMenuListener() {
+            @Override
+            public void popupMenuCanceled(PopupMenuEvent e) {}
+            @Override
+            public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {}
+            @Override
+            public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+                copy.setEnabled(l.getSelectedText() != null);
+            }
+        });
+        this.add(pop);
+    
+    
+    
+    ////////////////
