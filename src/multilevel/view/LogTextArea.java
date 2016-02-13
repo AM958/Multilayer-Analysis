@@ -115,4 +115,23 @@ public class LogTextArea extends JTextPane{
         }
     }
     
+    /**
+     *
+     * @param s
+     * @param style
+     */
+    public void appendError(String s, SimpleAttributeSet style) {
+        Date now = new Date();
+        String time = new SimpleDateFormat("[dd/MM/yyyy HH:mm:ss]").format(now);
+        StyledDocument document = (StyledDocument) this.getDocument();
+        String txt = time + ": " + s;
+        try {
+            document.insertString(document.getLength(), txt , style);
+            //super.
+            //super.append(time + ": " + s);
+        } catch (BadLocationException ex) {
+            Logger.getLogger(LogTextArea.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 }
