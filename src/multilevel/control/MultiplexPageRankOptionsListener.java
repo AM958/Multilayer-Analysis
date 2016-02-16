@@ -43,20 +43,22 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
             
         }
         if(ae.getActionCommand().equals("OK")){
-            ui.getjDialog2().dispose();
+            
             
             MultilevelSparseMultigraph mg = ui.getMg();
             double beta = Integer.parseInt(ui.getPageRankOptions2().getBetaValueBox().getSelectedItem().toString());
             double gamma = Integer.parseInt(ui.getPageRankOptions2().getGammaValueBox().getSelectedItem().toString());
             try {
-                double alpha = Double.parseDouble(ui.getPageRankOptions2().getAlphaValueField().getText());
                 if(mg.getLayerList().isEmpty()){
                     throw new Exception("Error! No graph found, open file or check if the opened file has the proper syntax.\n");              
                 }
                 if(!mg.getMultiEdges().isEmpty()){                
                     throw new Exception("The graph is not a multiplex.\n");
                 }
-                
+                if(ui.getPageRankOptions2().getAlphaValueField().getText().equals("")){
+                    throw new Exception("Error! PageRank parameters should be > 0.");
+                }
+                double alpha = Double.parseDouble(ui.getPageRankOptions2().getAlphaValueField().getText());
                 MultiplexPageRank mpr = new MultiplexPageRank(mg, alpha, beta, gamma);
                 stp.setCentralityTab(mpr.getX(), "Page Rank");
                 stp.getjLabel21().setText("Average Vertex PR: " + mpr.getAvgX());
@@ -65,15 +67,14 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
                 stp.getjLabel24().setText("gamma (γ) = " + gamma);
                 stp.getjLabel25().setText("Page Rank");
                 
-                
+                ui.setEnabled(true);
                 ui.getLogTxtArea1().append("Calculated Page Rank (a: " + alpha + ", β: " + beta + ", γ: " + gamma + ").\n");
             } catch (Exception ex) {
                 ui.getErrorDialog().setVisible(true);
-                ui.setEnabled(false);
-                
-                ui.getLogTxtArea1().appendError(ex.getMessage() + "\n");
+                ui.setEnabled(false);                
+                ui.getLogTxtArea1().appendError(ex.getMessage());
             }
-            
+            ui.getjDialog2().dispose();
             
         }
     }
