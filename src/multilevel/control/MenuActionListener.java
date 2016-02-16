@@ -6,7 +6,6 @@
 package multilevel.control;
 
 import edu.uci.ics.jung.graph.Graph;
-import edu.uci.ics.jung.graph.SparseMultigraph;
 import edu.uci.ics.jung.graph.util.EdgeType;
 import static edu.uci.ics.jung.graph.util.EdgeType.DIRECTED;
 import static edu.uci.ics.jung.graph.util.EdgeType.UNDIRECTED;
@@ -40,7 +39,6 @@ public class MenuActionListener implements ActionListener{
     
     public MenuActionListener(){
         super();
-        //this.jMenu = item;
     }
 
     public MenuActionListener(MainUI ui){

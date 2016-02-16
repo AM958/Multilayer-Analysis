@@ -11,7 +11,6 @@ import multilevel.model.MultilevelSparseMultigraph;
 import multilevel.model.pciType;
 import multilevel.view.MainUI;
 import multilevel.view.PCIOptions;
-import multilevel.view.SideTabbedPane;
 
 /**
  *
@@ -41,7 +40,7 @@ public class pciTypeComboBoxListener implements ActionListener{
             }
         }
         catch(Exception ex){
-            parentUI.getLogTxtArea1().append(ex.getMessage());
+            parentUI.getLogTxtArea1().appendError(ex.getMessage());
         }
     }
     

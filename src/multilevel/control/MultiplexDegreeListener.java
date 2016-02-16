@@ -5,11 +5,8 @@
  */
 package multilevel.control;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 import multilevel.model.MultilevelSparseMultigraph;
 import multilevel.model.MultiplexDegreeCentrality;
 import multilevel.view.MainUI;
@@ -33,6 +30,12 @@ public class MultiplexDegreeListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         try {
+            if(parentUI.getMg().getLayerList().isEmpty()){
+               throw new Exception("Error! No graph found, open file or check if the opened file has the proper syntax.\n");              
+            }
+            if(!parentUI.getMg().getMultiEdges().isEmpty()){                
+                throw new Exception("The graph is not a multiplex.\n");
+            }
             
             MultiplexDegreeCentrality degreeC = new MultiplexDegreeCentrality(parentUI.getMg());
             if(ae.getActionCommand().equals("Multiplex In-Degree")){
@@ -48,9 +51,9 @@ public class MultiplexDegreeListener implements ActionListener{
             stp.getjLabel25().setText("Degree Centrality");
             parentUI.getLogTxtArea1().append("Calculated Degree Centrality for each Vertex.\n");
         } catch (Exception ex) {
-            SimpleAttributeSet red = new SimpleAttributeSet();
-            StyleConstants.setForeground(red, Color.RED);
-            parentUI.getLogTxtArea1().append(ex.getMessage(), red);
+            parentUI.getErrorDialog().setVisible(true);
+            parentUI.setEnabled(false);
+            parentUI.getLogTxtArea1().appendError(ex.getMessage());
         }
     }
     

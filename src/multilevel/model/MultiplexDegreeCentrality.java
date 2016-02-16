@@ -29,6 +29,9 @@ public class MultiplexDegreeCentrality {
         if(mg.getLayerList().isEmpty()){
             throw new Exception("Error! No graph found, open file or check if the opened file has the proper syntax.\n");
         }
+        if(!mg.getMultiEdges().isEmpty()){                
+                throw new Exception("The graph is not a multiplex.\n");
+        }
         degreeCentrality = new HashMap();
         averageDegree = 0;
         

@@ -32,8 +32,7 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //ui.getPageRankOptions2().getjButton2().addActionListener(this);
-        //ui.setEnabled(false);
+
         if(ae.getActionCommand().equals("Multiplex Page Rank")){
             ui.setEnabled(false);
             ui.getjDialog2().setVisible(true);
@@ -44,13 +43,19 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
             
         }
         if(ae.getActionCommand().equals("OK")){
-            ui.setEnabled(true);
+            ui.getjDialog2().dispose();
+            
             MultilevelSparseMultigraph mg = ui.getMg();
             double beta = Integer.parseInt(ui.getPageRankOptions2().getBetaValueBox().getSelectedItem().toString());
             double gamma = Integer.parseInt(ui.getPageRankOptions2().getGammaValueBox().getSelectedItem().toString());
             try {
                 double alpha = Double.parseDouble(ui.getPageRankOptions2().getAlphaValueField().getText());
-                
+                if(mg.getLayerList().isEmpty()){
+                    throw new Exception("Error! No graph found, open file or check if the opened file has the proper syntax.\n");              
+                }
+                if(!mg.getMultiEdges().isEmpty()){                
+                    throw new Exception("The graph is not a multiplex.\n");
+                }
                 
                 MultiplexPageRank mpr = new MultiplexPageRank(mg, alpha, beta, gamma);
                 stp.setCentralityTab(mpr.getX(), "Page Rank");
@@ -59,14 +64,14 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
                 stp.getjLabel23().setText("beta (β) = " + beta);
                 stp.getjLabel24().setText("gamma (γ) = " + gamma);
                 stp.getjLabel25().setText("Page Rank");
-                ui.getjDialog2().dispose();
+                
                 
                 ui.getLogTxtArea1().append("Calculated Page Rank (a: " + alpha + ", β: " + beta + ", γ: " + gamma + ").\n");
             } catch (Exception ex) {
-                SimpleAttributeSet red = new SimpleAttributeSet();
-                StyleConstants.setForeground(red, Color.RED);
-                ui.setEnabled(true);
-                ui.getLogTxtArea1().append(ex.getMessage() + "\n", red);
+                ui.getErrorDialog().setVisible(true);
+                ui.setEnabled(false);
+                
+                ui.getLogTxtArea1().appendError(ex.getMessage() + "\n");
             }
             
             

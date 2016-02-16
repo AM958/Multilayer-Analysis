@@ -5,7 +5,6 @@
  */
 package multilevel.control;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -14,9 +13,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JTable;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
-import multilevel.model.ExportToTxt;
 import multilevel.view.MainUI;
 
 /**
@@ -45,13 +41,10 @@ public class ExportTableListener implements ActionListener{
                 f.getParentFile().mkdirs(); 
                 f.createNewFile();
                 try (FileWriter writer = new FileWriter(filename)) {
-
                     writer.append("Vertex," + parent.getTabbedPane11().getjLabel25().getText() + "\n");
                     for(int row = 0; row < table.getRowCount(); row ++){
                         writer.append(table.getValueAt(row, 0) + "," + table.getValueAt(row, 1) + "\n");
                     }
-                    
-                    
                     writer.flush();
                 }
                 parent.getLogTxtArea1().append("Data exported to file \"" + System.getProperty("user.dir") + File.separator + filename + "\".\n");
@@ -61,9 +54,7 @@ public class ExportTableListener implements ActionListener{
             {
                 parent.getErrorDialog().setVisible(true);
                 parent.setEnabled(false);
-                SimpleAttributeSet red = new SimpleAttributeSet();
-                StyleConstants.setForeground(red, Color.RED);
-                parent.getLogTxtArea1().append(e.getMessage(), red);
+                parent.getLogTxtArea1().appendError(e.getMessage());
             } 
         }
     }

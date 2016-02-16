@@ -24,13 +24,7 @@ public class SingleViewToggleListener  implements ActionListener{
         this.gFP = parent.getGraphFoundationPanel1();
         this.jCB = parent.getjComboBox1();
     }
-    
-    /*public SingleViewToggleListener(graphFoundationPanel gFP, JComboBox jCB){
-        this.gFP = gFP;
-        this.jCB= jCB;
-    }*/
-    
-    
+
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getActionCommand().equals("Single View")){

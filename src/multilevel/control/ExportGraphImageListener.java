@@ -21,14 +21,11 @@ import java.awt.geom.Point2D;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 import multilevel.view.ExportGraphPopUp;
 import multilevel.view.MainUI;
 import org.apache.commons.collections15.functors.ConstantTransformer;
 import org.freehep.graphics2d.VectorGraphics;
 import org.freehep.graphicsio.ImageGraphics2D;
-import org.freehep.graphicsio.gif.GIFGraphics2D;
 import org.freehep.graphicsio.svg.SVGGraphics2D;
 
 /**
@@ -49,8 +46,7 @@ public class ExportGraphImageListener implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        SimpleAttributeSet red = new SimpleAttributeSet();
-        StyleConstants.setForeground(red, Color.RED);
+
         if(ae.getActionCommand().equals("Export Graph")){
             exportPop = new ExportGraphPopUp();
             exportPop.setVisible(true);
@@ -60,7 +56,9 @@ public class ExportGraphImageListener implements ActionListener{
         }
         if(ae.getActionCommand().equals("OK")){
             if(vv.isEmpty()){
-                parent.getLogTxtArea1().append("There is no graph to export.\n", red);
+                parent.getErrorDialog().setVisible(true);
+                parent.setEnabled(false);
+                parent.getLogTxtArea1().appendError("There is no graph to export.\n");
             } else {
                 String log = null;
                 for (final VisualizationViewer gvv1 : vv) {
@@ -104,16 +102,18 @@ public class ExportGraphImageListener implements ActionListener{
                                 + File.separator + "\"" + " as \"" + fileExtension + "\".\n";
 
                     } catch (IOException e) {
-
-                        parent.getLogTxtArea1().append(e.getMessage(), red);
+                        parent.getErrorDialog().setVisible(true);
+                        parent.setEnabled(false);
+                        parent.getLogTxtArea1().appendError(e.getMessage());
                     }
                 }
                 try {
                     Desktop.getDesktop().open(new File("Exported" + File.separator));
                     parent.getLogTxtArea1().append(log);
                 } catch (IOException e) {
-
-                    parent.getLogTxtArea1().append(e.getMessage(), red);
+                    parent.getErrorDialog().setVisible(true);
+                    parent.setEnabled(false);
+                    parent.getLogTxtArea1().appendError(e.getMessage());
                 }
             }
             exportPop.dispose();

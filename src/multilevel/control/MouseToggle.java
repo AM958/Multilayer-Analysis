@@ -12,9 +12,7 @@ import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JToggleButton;
 import multilevel.view.MainUI;
 
 /**
@@ -29,8 +27,7 @@ public class MouseToggle implements ActionListener{
     
     private boolean pickOrTranslate; //true = pick, false = translate
     
-    public MouseToggle(List<VisualizationViewer<Integer, String>> vv, JButton tog){
-    
+    public MouseToggle(List<VisualizationViewer<Integer, String>> vv, JButton tog){    
         pickOrTranslate = true;
         this.vv = vv;
         this.tog = tog;

@@ -138,10 +138,8 @@ public class MainUI extends javax.swing.JFrame {
 
         jDialog1.setTitle("PCI Options");
         jDialog1.setAlwaysOnTop(true);
-        jDialog1.setMaximumSize(new java.awt.Dimension(300, 185));
         jDialog1.setMinimumSize(new java.awt.Dimension(300, 185));
         jDialog1.setModal(true);
-        jDialog1.setPreferredSize(new java.awt.Dimension(300, 185));
         jDialog1.setResizable(false);
         jDialog1.getContentPane().setLayout(new java.awt.FlowLayout());
         pciOpt = new PCIOptions();

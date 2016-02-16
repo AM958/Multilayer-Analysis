@@ -6,6 +6,7 @@ package multilevel.view;
  * and open the template in the editor.
  */
 
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
@@ -23,6 +24,7 @@ import javax.swing.event.PopupMenuListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultEditorKit;
 import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 /**
  *
@@ -120,13 +122,17 @@ public class LogTextArea extends JTextPane{
      * @param s
      * @param style
      */
-    public void appendError(String s, SimpleAttributeSet style) {
+    public void appendError(String s) {
         Date now = new Date();
         String time = new SimpleDateFormat("[dd/MM/yyyy HH:mm:ss]").format(now);
         StyledDocument document = (StyledDocument) this.getDocument();
-        String txt = time + ": " + s;
+        //String txt = time + ": " + s;
+        String txt = s;
+        SimpleAttributeSet red = new SimpleAttributeSet();
+        StyleConstants.setForeground(red, Color.RED);
         try {
-            document.insertString(document.getLength(), txt , style);
+            document.insertString(document.getLength(), time + ": ", null);
+            document.insertString(document.getLength(), txt , red);
             //super.
             //super.append(time + ": " + s);
         } catch (BadLocationException ex) {
