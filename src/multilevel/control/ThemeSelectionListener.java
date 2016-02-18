@@ -27,13 +27,8 @@ public class ThemeSelectionListener implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        try {
-            javax.swing.UIManager.setLookAndFeel("com.alee.laf.WebLookAndFeel");
-            javax.swing.SwingUtilities.updateComponentTreeUI(parent);
-            parent.pack();
-            parent.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ThemeSelectionListener.class.getName()).log(Level.SEVERE, null, ex);
+        if(ae.getActionCommand().equals("Select Layout")){
+            parent.getLayoutSelectionDialog().setVisible(true);
         }
     }
     

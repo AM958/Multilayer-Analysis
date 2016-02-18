@@ -5,11 +5,8 @@
  */
 package multilevel.control;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 import multilevel.model.MultilevelSparseMultigraph;
 import multilevel.model.MultiplexPageRank;
 import multilevel.view.MainUI;

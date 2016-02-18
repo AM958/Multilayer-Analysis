@@ -56,8 +56,6 @@ public class NetFileChooser {
         Cursor tempCursor = p.getCursor();
         // Demonstrate "Open" dialog:
         int rVal = c.showOpenDialog(p);
-        SimpleAttributeSet red = new SimpleAttributeSet();
-        StyleConstants.setForeground(red, Color.RED);
         if (rVal == JFileChooser.APPROVE_OPTION) {
             try {
                 String fileName = c.getSelectedFile().getName();
@@ -120,14 +118,14 @@ public class NetFileChooser {
             } catch (IOException ex) {
                 ui.getErrorDialog().setVisible(true);
                 ui.setEnabled(false);
-                lta.append(ex.toString(), red);
+                lta.appendError(ex.toString());
                 
             } catch (Exception ex){
-                lta.append("ERROR: Graphs from file \"" + ex.getMessage() + "\" could not be generated.\n", red);
+                lta.appendError("ERROR: Graphs from file \"" + ex.getMessage() + "\" could not be generated.\n");
                 String tip = "Make sure you opened the correct file and it has the correct encoding.\n";
                 ui.getErrorDialog().setVisible(true);
                 ui.setEnabled(false);
-                lta.append(tip, red); 
+                lta.appendError(tip); 
             }
             
 

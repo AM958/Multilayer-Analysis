@@ -81,6 +81,8 @@ public class MultilayerCNets {
         ui.getMenuItem(1).addActionListener(new MenuActionListener(ui));
         ui.getMenuItem(2).addActionListener(new MenuActionListener(ui));
         ui.getMenuItem(3).addActionListener(new MenuActionListener(ui));
+        ui.getInterfaceOpenButton().addActionListener(new MenuActionListener(ui));
+        ui.getNewButton().addActionListener(new MenuActionListener(ui));
         ui.getTabbedPane11().getjTable3().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable3()));
         ui.getTabbedPane11().getjTable2().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable2()));
         ui.getTabbedPane11().getjTable4().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable4()));
@@ -98,7 +100,7 @@ public class MultilayerCNets {
         ui.getPciOpt().getPciOkButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciCancelButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciMethodComboBox().addActionListener(new pciTypeComboBoxListener(ui));
-        //ui.getMenuItem(9).addActionListener(new ThemeSelectionListener(ui));
+        ui.getMenuItem(9).addActionListener(new ThemeSelectionListener(ui));
         ui.getPageRankOptions2().getjButton2().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getPageRankOptions2().getjButton1().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getTabbedPane11().getExportButton().addActionListener(new ExportTableListener(ui));

@@ -41,6 +41,11 @@ public class MainUI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jDialog1 = new javax.swing.JDialog();
+        layoutSelectionDialog = new javax.swing.JDialog();
+        jLabel3 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -49,8 +54,8 @@ public class MainUI extends javax.swing.JFrame {
         logGraphSplitPane1 = new multilevel.view.LogGraphSplitPane();
         jToolBar1 = new javax.swing.JToolBar();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        newButton = new javax.swing.JButton();
+        interfaceOpenButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         jButton7 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -58,10 +63,7 @@ public class MainUI extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JToolBar.Separator();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         mainMenuBar3 = new multilevel.view.MainMenuBar();
 
         jDialog2.setTitle("Page Rank Options");
@@ -145,6 +147,60 @@ public class MainUI extends javax.swing.JFrame {
         pciOpt = new PCIOptions();
         jDialog1.add(pciOpt);
 
+        layoutSelectionDialog.setTitle("Select Layout");
+        layoutSelectionDialog.setAlwaysOnTop(true);
+        layoutSelectionDialog.setMinimumSize(new java.awt.Dimension(200, 140));
+        layoutSelectionDialog.setModal(true);
+        layoutSelectionDialog.setPreferredSize(new java.awt.Dimension(200, 140));
+        layoutSelectionDialog.setResizable(false);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit-select-all.png"))); // NOI18N
+        jLabel3.setText("Select Graph Layout");
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Circle", "Fruchterman - Reingold", "ISOM", "Kamada - Kawai", "Spring" }));
+        jComboBox2.setSelectedIndex(1);
+
+        jButton1.setText("OK");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Cancel");
+
+        javax.swing.GroupLayout layoutSelectionDialogLayout = new javax.swing.GroupLayout(layoutSelectionDialog.getContentPane());
+        layoutSelectionDialog.getContentPane().setLayout(layoutSelectionDialogLayout);
+        layoutSelectionDialogLayout.setHorizontalGroup(
+            layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layoutSelectionDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layoutSelectionDialogLayout.createSequentialGroup()
+                        .addGap(0, 18, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addGap(16, 16, 16))
+                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layoutSelectionDialogLayout.setVerticalGroup(
+            layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layoutSelectionDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(0, 14, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MultiLayer Complex Networks Analysis");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -152,7 +208,7 @@ public class MainUI extends javax.swing.JFrame {
         jPanel3.setForeground(new java.awt.Color(240, 240, 240));
         jPanel3.setPreferredSize(new java.awt.Dimension(1024, 768));
 
-        jSplitPane1.setDividerLocation(720);
+        jSplitPane1.setDividerLocation(960);
         jSplitPane1.setResizeWeight(0.5);
 
         tabbedPane11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
@@ -174,6 +230,7 @@ public class MainUI extends javax.swing.JFrame {
 
         jDialog2.setLocationRelativeTo(this);
         jDialog1.setLocationRelativeTo(this);
+        layoutSelectionDialog.setLocationRelativeTo(this);
         errorDialog.setLocationRelativeTo(this);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -188,17 +245,20 @@ public class MainUI extends javax.swing.JFrame {
         jSeparator3.setSeparatorSize(new java.awt.Dimension(6, 29));
         jToolBar1.add(jSeparator3);
 
-        jButton1.setText("jButton1");
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton1);
+        newButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document-new.png"))); // NOI18N
+        newButton.setText("New");
+        newButton.setToolTipText("");
+        newButton.setFocusable(false);
+        newButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        newButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(newButton);
 
-        jButton2.setText("jButton2");
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton2);
+        interfaceOpenButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/document-open.png"))); // NOI18N
+        interfaceOpenButton.setText("Open");
+        interfaceOpenButton.setFocusable(false);
+        interfaceOpenButton.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        interfaceOpenButton.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar1.add(interfaceOpenButton);
         jToolBar1.add(jSeparator1);
 
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconarchive/Hands-One-Finger-icon.png"))); // NOI18N
@@ -229,30 +289,7 @@ public class MainUI extends javax.swing.JFrame {
         jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jButton6.addActionListener(new multilevel.control.SingleViewToggleListener(this));
         jToolBar1.add(jButton6);
-
-        jToggleButton4.setText("jToggleButton4");
-        jToggleButton4.setFocusable(false);
-        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jToggleButton4);
         jToolBar1.add(jSeparator4);
-
-        jButton4.setText("jButton4");
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jToolBar1.add(jButton4);
-
-        jButton3.setText("jButton3");
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar1.add(jButton3);
 
         setJMenuBar(mainMenuBar3);
 
@@ -276,32 +313,33 @@ public class MainUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        jDialog2.setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         this.setEnabled(true);
         errorDialog.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog errorDialog;
+    private javax.swing.JButton interfaceOpenButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JDialog jDialog1;
     private PCIOptions pciOpt;
     private javax.swing.JDialog jDialog2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private multilevel.view.GraphFoundationPanel graphFoundationPanel1;
     private multilevel.view.LogTextArea logTxtArea1;
     private javax.swing.JPanel jPanel3;
@@ -311,10 +349,11 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JDialog layoutSelectionDialog;
     private multilevel.view.LogGraphSplitPane logGraphSplitPane1;
     private multilevel.view.MainMenuBar mainMenuBar3;
+    private javax.swing.JButton newButton;
     private multilevel.view.PageRankOptions pageRankOptions2;
     private multilevel.view.SideTabbedPane tabbedPane11;
     // End of variables declaration//GEN-END:variables
@@ -495,6 +534,27 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JDialog getjDialog1() {
         return jDialog1;
+    }
+
+    /**
+     * @return the interfaceOpenButton
+     */
+    public javax.swing.JButton getInterfaceOpenButton() {
+        return interfaceOpenButton;
+    }
+
+    /**
+     * @return the newButton
+     */
+    public javax.swing.JButton getNewButton() {
+        return newButton;
+    }
+
+    /**
+     * @return the layoutSelectionDialog
+     */
+    public javax.swing.JDialog getLayoutSelectionDialog() {
+        return layoutSelectionDialog;
     }
 }
 

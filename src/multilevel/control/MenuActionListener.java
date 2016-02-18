@@ -14,6 +14,8 @@ import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import multilevel.model.DrawGraph;
@@ -67,6 +69,11 @@ public class MenuActionListener implements ActionListener{
                 ui.getTabbedPane11().resetTabPane();
                 graphGeneration(DIRECTED);
                 lTA.append("New Directed Random Graphs were generated.\n");
+                break;
+            case "New":
+                ui.getErrorDialog().setVisible(true);
+                ui.setEnabled(false);
+                lTA.appendError("Not implemented yet!\n");
                 break;
             case "Open":
             case "Click here to open new graph...":
