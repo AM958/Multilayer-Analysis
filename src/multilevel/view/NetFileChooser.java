@@ -113,7 +113,7 @@ public class NetFileChooser {
                 System.out.println("setgraph" + elapsedTime);
                 
                 p.setCursor(tempCursor);
-                lta.append("Graphs from file \"" + fileName + "\" were generated.\n" );                
+                lta.append("Graphs from file \"" + fileName + "\" were generated.\n" );                 
 
             } catch (IOException ex) {
                 ui.getErrorDialog().setVisible(true);

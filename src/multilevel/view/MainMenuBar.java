@@ -69,7 +69,7 @@ public class MainMenuBar extends JMenuBar{
         exitMenuItem = new MainMenuItem("Exit", new javax.swing.ImageIcon(getClass().getResource("/img/process-stop.png")), "Exit");
         randDirectedGraphMenuItem = new MainMenuItem("Random Graph (D)", new javax.swing.ImageIcon(getClass().getResource("/img/view-refresh.png")), "Generate Random Directed Graph");
         randUndirectedGraphMenuItem = new MainMenuItem("Random Graph (U)", new javax.swing.ImageIcon(getClass().getResource("/img/view-refresh.png")), "Generate Random Undirected Graph");
-        optionsMenuItem = new MainMenuItem("Select Layout", new javax.swing.ImageIcon(getClass().getResource("/img/emblem-system.png")));
+        optionsMenuItem = new MainMenuItem("Change Layout", new javax.swing.ImageIcon(getClass().getResource("/img/emblem-system.png")));
         openMenuItem = new MainMenuItem("Open", new javax.swing.ImageIcon(getClass().getResource("/img/document-open.png")));
         exportGraphsMenuItem = new MainMenuItem("Export Graph", new javax.swing.ImageIcon(getClass().getResource("/img/image-x-generic.png")));
         exportResultsMenuItem = new MainMenuItem("Export Results", new javax.swing.ImageIcon(getClass().getResource("/img/flaticon/csv1.png")));

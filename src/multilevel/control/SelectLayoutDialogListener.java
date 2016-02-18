@@ -23,11 +23,9 @@ public class SelectLayoutDialogListener implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if(ae.getActionCommand().equals("Select Layout")){
-            parent.getLayoutSelectionDialog().setVisible(true);
-            
+        if(ae.getActionCommand().equals("Change Layout")){
+            parent.getLayoutSelectionDialog().setVisible(true);            
         }
-
     }
     
 }

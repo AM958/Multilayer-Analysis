@@ -57,14 +57,11 @@ public class SelectLayoutListener implements ActionListener{
 
                 p.setGraph(g2);
                 parent.getLogTxtArea1().append("Layout changed to " + parent.getSelectLayoutComboBox().getSelectedItem().toString() + "\n");
-                
                 parent.getLayoutSelectionDialog().dispose();
 
             }
             else if(ae.getActionCommand().equals("Cancel")){
-                
                 parent.getLayoutSelectionDialog().dispose();
-
             }
         } catch (Exception ex) {
             parent.getLayoutSelectionDialog().dispose();
