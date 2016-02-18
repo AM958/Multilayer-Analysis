@@ -28,7 +28,9 @@ public class ThemeSelectionListener implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getActionCommand().equals("Select Layout")){
+            parent.setEnabled(false);
             parent.getLayoutSelectionDialog().setVisible(true);
+            
         }
     }
     

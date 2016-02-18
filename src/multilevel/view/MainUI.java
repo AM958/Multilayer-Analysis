@@ -43,8 +43,8 @@ public class MainUI extends javax.swing.JFrame {
         jDialog1 = new javax.swing.JDialog();
         layoutSelectionDialog = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        selectLayoutComboBox = new javax.swing.JComboBox();
+        selectLayoutOKButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
@@ -158,13 +158,12 @@ public class MainUI extends javax.swing.JFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit-select-all.png"))); // NOI18N
         jLabel3.setText("Select Graph Layout");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Circle", "Fruchterman - Reingold", "ISOM", "Kamada - Kawai", "Spring" }));
-        jComboBox2.setSelectedIndex(1);
+        selectLayoutComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Circle", "Fruchterman - Reingold", "Fruchterman - Reingold 2", "ISOM", "Kamada - Kawai", "Spring" }));
 
-        jButton1.setText("OK");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        selectLayoutOKButton.setText("OK");
+        selectLayoutOKButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                selectLayoutOKButtonActionPerformed(evt);
             }
         });
 
@@ -179,11 +178,11 @@ public class MainUI extends javax.swing.JFrame {
                 .addGroup(layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layoutSelectionDialogLayout.createSequentialGroup()
                         .addGap(0, 18, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(selectLayoutOKButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)
                         .addGap(16, 16, 16))
-                    .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(selectLayoutComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -193,10 +192,10 @@ public class MainUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selectLayoutComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(selectLayoutOKButton)
                     .addComponent(jButton2))
                 .addGap(0, 14, Short.MAX_VALUE))
         );
@@ -318,22 +317,20 @@ public class MainUI extends javax.swing.JFrame {
         errorDialog.dispose();
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void selectLayoutOKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLayoutOKButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_selectLayoutOKButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog errorDialog;
     private javax.swing.JButton interfaceOpenButton;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JDialog jDialog1;
     private PCIOptions pciOpt;
     private javax.swing.JDialog jDialog2;
@@ -355,6 +352,8 @@ public class MainUI extends javax.swing.JFrame {
     private multilevel.view.MainMenuBar mainMenuBar3;
     private javax.swing.JButton newButton;
     private multilevel.view.PageRankOptions pageRankOptions2;
+    private javax.swing.JComboBox selectLayoutComboBox;
+    private javax.swing.JButton selectLayoutOKButton;
     private multilevel.view.SideTabbedPane tabbedPane11;
     // End of variables declaration//GEN-END:variables
     
@@ -555,6 +554,20 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JDialog getLayoutSelectionDialog() {
         return layoutSelectionDialog;
+    }
+
+    /**
+     * @return the selectLayoutOKButton
+     */
+    public javax.swing.JButton getSelectLayoutOKButton() {
+        return selectLayoutOKButton;
+    }
+
+    /**
+     * @return the selectLayoutComboBox
+     */
+    public javax.swing.JComboBox getSelectLayoutComboBox() {
+        return selectLayoutComboBox;
     }
 }
 

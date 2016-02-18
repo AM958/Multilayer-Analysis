@@ -7,6 +7,7 @@ package multilevel.view;
 
 import edu.uci.ics.jung.algorithms.layout.CircleLayout;
 import edu.uci.ics.jung.algorithms.layout.FRLayout;
+import edu.uci.ics.jung.algorithms.layout.FRLayout2;
 import edu.uci.ics.jung.algorithms.layout.ISOMLayout;
 import edu.uci.ics.jung.algorithms.layout.KKLayout;
 import edu.uci.ics.jung.algorithms.layout.Layout;
@@ -40,25 +41,29 @@ public class RedrawGraphPaneWithLayout {
         layout11 = new CircleLayout(g);
     }
     
-    public RedrawGraphPaneWithLayout(String l) throws Exception{
-        switch (l) {
-            case "Circle":
+    public RedrawGraphPaneWithLayout(int idx, Graph<String, String> g) throws Exception{
+        this.g = g;
+        switch (idx) {
+            case 0:
                 layout11 = new CircleLayout(g);
                 break;
-            case "FR":
+            case 1:
                 layout11 = new FRLayout(g);
                 break;
-            case "KK":
+            case 2:
+                layout11 = new FRLayout2(g);
+                break;    
+            case 3:
                 layout11 = new KKLayout(g);
                 break;
-            case "Spring":
+            case 4:
                 layout11 = new SpringLayout(g);
                 break;
-            case "ISOM":
+            case 5:
                 layout11 = new ISOMLayout(g);
                 break;
             default:
-                throw new Exception("Wrong layout chosen!\n");
+                throw new Exception("Error: Wrong layout chosen!\n");
         }
     }
     
