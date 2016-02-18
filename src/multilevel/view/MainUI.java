@@ -45,7 +45,7 @@ public class MainUI extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         selectLayoutComboBox = new javax.swing.JComboBox();
         selectLayoutOKButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        selectLayoutCancelButton = new javax.swing.JButton();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -167,7 +167,7 @@ public class MainUI extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Cancel");
+        selectLayoutCancelButton.setText("Cancel");
 
         javax.swing.GroupLayout layoutSelectionDialogLayout = new javax.swing.GroupLayout(layoutSelectionDialog.getContentPane());
         layoutSelectionDialog.getContentPane().setLayout(layoutSelectionDialogLayout);
@@ -180,7 +180,7 @@ public class MainUI extends javax.swing.JFrame {
                         .addGap(0, 18, Short.MAX_VALUE)
                         .addComponent(selectLayoutOKButton, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(selectLayoutCancelButton)
                         .addGap(16, 16, 16))
                     .addComponent(selectLayoutComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -196,7 +196,7 @@ public class MainUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layoutSelectionDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectLayoutOKButton)
-                    .addComponent(jButton2))
+                    .addComponent(selectLayoutCancelButton))
                 .addGap(0, 14, Short.MAX_VALUE))
         );
 
@@ -326,7 +326,6 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JDialog errorDialog;
     private javax.swing.JButton interfaceOpenButton;
     private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -352,6 +351,7 @@ public class MainUI extends javax.swing.JFrame {
     private multilevel.view.MainMenuBar mainMenuBar3;
     private javax.swing.JButton newButton;
     private multilevel.view.PageRankOptions pageRankOptions2;
+    private javax.swing.JButton selectLayoutCancelButton;
     private javax.swing.JComboBox selectLayoutComboBox;
     private javax.swing.JButton selectLayoutOKButton;
     private multilevel.view.SideTabbedPane tabbedPane11;
@@ -568,6 +568,13 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JComboBox getSelectLayoutComboBox() {
         return selectLayoutComboBox;
+    }
+
+    /**
+     * @return the selectLayoutCancelButton
+     */
+    public javax.swing.JButton getSelectLayoutCancelButton() {
+        return selectLayoutCancelButton;
     }
 }
 

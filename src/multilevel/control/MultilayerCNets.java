@@ -98,10 +98,11 @@ public class MultilayerCNets {
         ui.getMenuItem(5).addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getMenuItem(10).addActionListener(new ExportGraphImageListener(ui));
         ui.getSelectLayoutOKButton().addActionListener(new SelectLayoutListener(ui));
+        ui.getSelectLayoutCancelButton().addActionListener(new SelectLayoutListener(ui));
         ui.getPciOpt().getPciOkButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciCancelButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciMethodComboBox().addActionListener(new pciTypeComboBoxListener(ui));
-        ui.getMenuItem(9).addActionListener(new ThemeSelectionListener(ui));
+        ui.getMenuItem(9).addActionListener(new SelectLayoutDialogListener(ui));
         ui.getPageRankOptions2().getjButton2().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getPageRankOptions2().getjButton1().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getTabbedPane11().getExportButton().addActionListener(new ExportTableListener(ui));

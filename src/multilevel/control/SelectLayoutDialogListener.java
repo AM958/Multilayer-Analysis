@@ -7,31 +7,27 @@ package multilevel.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.UnsupportedLookAndFeelException;
 import multilevel.view.MainUI;
 
 /**
  *
  * @author Spiros
  */
-public class ThemeSelectionListener implements ActionListener{
+public class SelectLayoutDialogListener implements ActionListener{
 
-    private MainUI parent;
+    private final MainUI parent;
     
-    public ThemeSelectionListener(MainUI parent){
+    public SelectLayoutDialogListener(MainUI parent){
         this.parent = parent;
     }
     
     @Override
     public void actionPerformed(ActionEvent ae) {
         if(ae.getActionCommand().equals("Select Layout")){
-            parent.setEnabled(false);
             parent.getLayoutSelectionDialog().setVisible(true);
             
         }
+
     }
     
 }

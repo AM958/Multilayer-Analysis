@@ -31,11 +31,11 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
     public void actionPerformed(ActionEvent ae) {
 
         if(ae.getActionCommand().equals("Multiplex Page Rank")){
-            ui.setEnabled(false);
+           
             ui.getjDialog2().setVisible(true);
         }
         if(ae.getActionCommand().equals("Cancel")){
-            ui.setEnabled(true);
+            
             ui.getjDialog2().dispose();
             
         }
@@ -64,7 +64,7 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
                 stp.getjLabel24().setText("gamma (γ) = " + gamma);
                 stp.getjLabel25().setText("Page Rank");
                 
-                ui.setEnabled(true);
+                
                 ui.getLogTxtArea1().append("Calculated Page Rank (a: " + alpha + ", β: " + beta + ", γ: " + gamma + ").\n");
             } catch (Exception ex) {
                 ui.getErrorDialog().setVisible(true);

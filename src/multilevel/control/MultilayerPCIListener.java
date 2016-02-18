@@ -5,13 +5,9 @@
  */
 package multilevel.control;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.text.SimpleAttributeSet;
-import javax.swing.text.StyleConstants;
 import multilevel.model.MultiLayerPCI;
 import multilevel.model.MultilevelSparseMultigraph;
 import multilevel.model.pciType;
