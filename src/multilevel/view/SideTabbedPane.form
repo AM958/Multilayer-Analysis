@@ -42,8 +42,8 @@
         <Container class="javax.swing.JPanel" name="jPanel3">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt; T&lt;br&gt;a&lt;br&gt;b&lt;br&gt;1&lt;/html&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; T&lt;br&gt;a&lt;br&gt;b&lt;br&gt;1&lt;/html&gt;"/>
+              <JTabbedPaneConstraints tabName="&lt;html&gt; I&lt;br&gt;n&lt;br&gt;f&lt;br&gt;o&lt;/html&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; I&lt;br&gt;n&lt;br&gt;f&lt;br&gt;o&lt;/html&gt;"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -154,8 +154,8 @@
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&lt;html&gt; T&lt;br&gt;a&lt;br&gt;b&lt;br&gt;2&lt;/html&gt;">
-                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; T&lt;br&gt;a&lt;br&gt;b&lt;br&gt;2&lt;/html&gt;"/>
+              <JTabbedPaneConstraints tabName="&lt;html&gt; E&lt;br&gt;d&lt;br&gt;g&lt;br&gt;e&lt;br&gt;s&lt;/html&gt;">
+                <Property name="tabTitle" type="java.lang.String" value="&lt;html&gt; E&lt;br&gt;d&lt;br&gt;g&lt;br&gt;e&lt;br&gt;s&lt;/html&gt;"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>

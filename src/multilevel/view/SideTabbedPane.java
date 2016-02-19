@@ -130,7 +130,7 @@ public class SideTabbedPane extends javax.swing.JPanel {
 
         jScrollPane2.setVisible(false);
 
-        jTabbedPane1.addTab("<html> T<br>a<br>b<br>1</html>", jPanel3);
+        jTabbedPane1.addTab("<html> I<br>n<br>f<br>o</html>", jPanel3);
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -188,7 +188,7 @@ public class SideTabbedPane extends javax.swing.JPanel {
 
         jScrollPane3.setVisible(false);
 
-        jTabbedPane1.addTab("<html> T<br>a<br>b<br>2</html>", jPanel4);
+        jTabbedPane1.addTab("<html> E<br>d<br>g<br>e<br>s</html>", jPanel4);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -370,7 +370,7 @@ public class SideTabbedPane extends javax.swing.JPanel {
         jTable3.setRowSorter(sorter3);
         
         jLabel7.setText("Layers: " + multilevelGraph.getLayerList().size() );
-        jLabel13 = jLabel7; //.setText("Layers: " + multilevelGraph.getLayerList().size() );
+        jLabel13.setText("Layers: " + multilevelGraph.getLayerList().size() );
         
         int vnum = 0;
         int ednum = 0;
@@ -461,7 +461,7 @@ public class SideTabbedPane extends javax.swing.JPanel {
         //}
         
         jLabel8.setText("Vertices: " + vnum);
-        jLabel14 = jLabel8; //.setText("Vertices: " + vnum);
+        jLabel14.setText("Vertices: " + vnum);
         jLabel18.setText("Edges");
         jLabel12.setText("Multilayer Edges");
         
@@ -486,6 +486,8 @@ public class SideTabbedPane extends javax.swing.JPanel {
     
     
     public void setCentralityTab(Map<Vertex, Float> Centrality, String centralityType){
+        
+        resetTabPane();
         
         DefaultTableModel model4 = (DefaultTableModel) jTable4.getModel();
         model4.setRowCount(0);
@@ -519,8 +521,8 @@ public class SideTabbedPane extends javax.swing.JPanel {
         /////////////////////////
 
        
-        jLabel19 = jLabel7;
-        jLabel20 = jLabel8;
+        jLabel19.setText(jLabel7.getText());
+        jLabel20.setText(jLabel14.getText());
 
         int num = 0;
         for(Vertex v: Centrality.keySet()){
@@ -530,7 +532,8 @@ public class SideTabbedPane extends javax.swing.JPanel {
    
             num++;
         }
-        jTabbedPane1.addTab("<html> C<br>e<br>n<br>t<br></html>", jPanel5);
+        jTabbedPane1.addTab("<html> C<br>e<br>n<br>t<br>r</html>", jPanel5);
+        //jTabbedPane1.addTab("Centrality", jPanel5);
         jPanel5.setVisible(true);
         jScrollPane4.setVisible(true);
         jTabbedPane1.setSelectedComponent(jPanel5);
@@ -541,6 +544,12 @@ public class SideTabbedPane extends javax.swing.JPanel {
         
         //this.repaint();
         jTabbedPane1.remove(jPanel5);
+        jLabel21.setText("");
+        jLabel22.setText("");
+        jLabel23.setText("");
+        jLabel24.setText("");
+        jLabel25.setText("");
+                
         //initComponents();  
     }
 
