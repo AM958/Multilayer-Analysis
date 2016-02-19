@@ -64,7 +64,7 @@ public class MultiplexPageRankOptionsListener implements ActionListener{
                 stp.getjLabel24().setText("gamma (γ) = " + gamma);
                 stp.getjLabel25().setText("Page Rank");
                 
-                
+                ui.getMenuItem(15).setEnabled(true);
                 ui.getLogTxtArea1().append("Calculated Page Rank (a: " + alpha + ", β: " + beta + ", γ: " + gamma + ").\n");
             } catch (Exception ex) {
                 ui.getErrorDialog().setVisible(true);

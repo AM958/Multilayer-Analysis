@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -85,7 +87,13 @@ public class NetFileChooser {
                         @Override
                         public void run() {
                             p.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-                            g2[layerKey - 1] = new DrawGraphPane().drawGraphZoomScrollPane(mlsmg.getLayerList().get(layerKey), mlsmg.getGraphName(layerKey));
+                            try {
+                                g2[layerKey - 1] = new DrawGraphPane(ui.getSelectLayoutComboBox().getSelectedIndex(), mlsmg.getLayerList().get(layerKey)).drawGraphZoomScrollPane(mlsmg.getLayerList().get(layerKey), mlsmg.getGraphName(layerKey));
+                            } catch (Exception ex) {
+                                ui.getErrorDialog().setVisible(true);
+                                ui.setEnabled(false);
+                                lta.appendError(ex.toString());
+                            }
                             p.repaint();
                             p.revalidate();
                         }
@@ -113,7 +121,8 @@ public class NetFileChooser {
                 System.out.println("setgraph" + elapsedTime);
                 
                 p.setCursor(tempCursor);
-                lta.append("Graphs from file \"" + fileName + "\" were generated.\n" );                 
+                lta.append("Graphs from file \"" + fileName + "\" were generated.\n" ); 
+                ui.getMenuItem(15).setEnabled(false);
 
             } catch (IOException ex) {
                 ui.getErrorDialog().setVisible(true);

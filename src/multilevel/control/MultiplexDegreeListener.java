@@ -49,6 +49,7 @@ public class MultiplexDegreeListener implements ActionListener{
             stp.setCentralityTab(degreeC.getDegreeCentrality(), "Degree");
             stp.getjLabel21().setText("Average Vertex Degree: " + degreeC.getAverageDegree());
             stp.getjLabel25().setText("Degree Centrality");
+            parentUI.getMenuItem(15).setEnabled(true);
             parentUI.getLogTxtArea1().append("Calculated Degree Centrality for each Vertex.\n");
         } catch (Exception ex) {
             parentUI.getErrorDialog().setVisible(true);

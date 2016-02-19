@@ -43,6 +43,7 @@ public class MultiplexBetweennessListener implements ActionListener{
             MultilplexBetweennessCentrality mbc = new MultilplexBetweennessCentrality(parentUI.getMg());
             stp.setCentralityTab(mbc.getBetweenness(), "Betweenness Centrality");
             stp.getjLabel25().setText("Betweenness Centrality");
+            parentUI.getMenuItem(15).setEnabled(true);
             parentUI.getLogTxtArea1().append("Calculated Betweenness Centrality for each Vertex.\n");
         } catch (Exception ex) {
             parentUI.getErrorDialog().setVisible(true);

@@ -62,12 +62,24 @@ public class MenuActionListener implements ActionListener{
             case "Random Graph (U)":
                 //drawGraph[] g = new DrawGraph[4];
                 ui.getTabbedPane11().resetTabPane();
-                graphGeneration(UNDIRECTED);
+                try {
+                    graphGeneration(UNDIRECTED);
+                } catch (Exception ex) {
+                    ui.getErrorDialog().setVisible(true);
+                    ui.setEnabled(false);
+                    lTA.appendError(ex.getMessage());
+                }
                 lTA.append("New Undirected Random Graphs were generated.\n");
                 break;
             case "Random Graph (D)":
                 ui.getTabbedPane11().resetTabPane();
-                graphGeneration(DIRECTED);
+                try {
+                    graphGeneration(DIRECTED);
+                } catch (Exception ex) {
+                    ui.getErrorDialog().setVisible(true);
+                    ui.setEnabled(false);
+                    lTA.appendError(ex.getMessage());
+                }
                 lTA.append("New Directed Random Graphs were generated.\n");
                 break;
             case "New":
@@ -90,7 +102,7 @@ public class MenuActionListener implements ActionListener{
         }
     }
 
-    public final void graphGeneration(EdgeType et){
+    public final void graphGeneration(EdgeType et) throws Exception{
         DefaultComboBoxModel model = new DefaultComboBoxModel();
         Random rand = new Random();
         
@@ -104,10 +116,11 @@ public class MenuActionListener implements ActionListener{
                     DrawGraph tempG = new DrawGraph(et);
                     g1 = tempG.randomGraph();
                     mg.addLayer(i, g1, tempG.getGraphName());
-                    g2[i] = new DrawGraphPane().drawGraphZoomScrollPane(g1, tempG.getGraphName());
+                    g2[i] = new DrawGraphPane(g1).drawGraphZoomScrollPane(g1, tempG.getGraphName());
                 }
                 gFP.setGraphCardLayout(null);
                 gFP.setGraph(g2);
+                //ui.setMg(mg);
                 gFP.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
                 for(int i=0;i<gFP.getVv().size();i++ ){
                     model.addElement("Graph " +(i+1));

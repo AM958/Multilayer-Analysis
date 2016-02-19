@@ -416,6 +416,9 @@ public class MainUI extends javax.swing.JFrame {
                 return mainMenuBar3.getMultilayerOutDegree();
             case 14:
                 return mainMenuBar3.getMultilayerPCI();
+            case 15:
+                return mainMenuBar3.getExportResultsMenuItem();
+                    
             
             default:
                 return null;

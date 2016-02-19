@@ -63,7 +63,7 @@ public class MultilayerPCIListener implements ActionListener{
                 String method = parentUI.getPciOpt().getPciMethodComboBox().getSelectedItem().toString();
                 stp.setCentralityTab(pci.getPci(), method);
                 stp.getjLabel25().setText(method);
-                
+                parentUI.getMenuItem(15).setEnabled(true);
                 parentUI.getLogTxtArea1().append("Calculated PCI with method: " + method + "\n");
             }
             if(ae.getActionCommand().equals("Cancel")){

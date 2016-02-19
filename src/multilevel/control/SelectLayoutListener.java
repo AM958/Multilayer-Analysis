@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import multilevel.model.MultilevelSparseMultigraph;
+import multilevel.view.DrawGraphPane;
 import multilevel.view.GraphFoundationPanel;
 import multilevel.view.MainUI;
 import multilevel.view.RedrawGraphPaneWithLayout;
@@ -44,12 +45,12 @@ public class SelectLayoutListener implements ActionListener{
                 VisualizationViewer<Integer, String>[]  g2 = new VisualizationViewer[mlsmg.getLayerList().size()];
                 Graph<String, String> g;
                 String gName;
-                RedrawGraphPaneWithLayout rgpl;
+                DrawGraphPane rgpl;
                 for (final int layerKey: mlsmg.getLayerList().keySet()){ 
 
                     g = mlsmg.getLayerList().get(layerKey);
                     gName = mlsmg.getGraphName(layerKey);
-                    rgpl = new RedrawGraphPaneWithLayout(parent.getSelectLayoutComboBox().getSelectedIndex(), g);
+                    rgpl = new DrawGraphPane(parent.getSelectLayoutComboBox().getSelectedIndex(), g);
                     g2[layerKey - 1] = rgpl.drawGraphZoomScrollPane(g, gName);
                     p.repaint();
                     p.revalidate();

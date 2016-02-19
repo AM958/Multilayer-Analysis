@@ -74,6 +74,7 @@ public class MainMenuBar extends JMenuBar{
         exportGraphsMenuItem = new MainMenuItem("Export Graph", new javax.swing.ImageIcon(getClass().getResource("/img/image-x-generic.png")));
         exportResultsMenuItem = new MainMenuItem("Export Results", new javax.swing.ImageIcon(getClass().getResource("/img/flaticon/csv1.png")));
         exportResultsMenuItem.setEnabled(false);
+        exportResultsMenuItem.setActionCommand("Export");
         
         multiplexBetweenness = new MainMenuItem("Multiplex Betweenness", "Calculate Multiplex Betweenness Centrality");
         multiplexPageRank = new MainMenuItem("Multiplex Page Rank", "Calculate Multiplex Page Rank Centrality");
@@ -212,6 +213,13 @@ public class MainMenuBar extends JMenuBar{
      */
     public MainMenuItem getMultilayerPCI() {
         return multilayerPCI;
+    }
+
+    /**
+     * @return the exportResultsMenuItem
+     */
+    public MainMenuItem getExportResultsMenuItem() {
+        return exportResultsMenuItem;
     }
     
 }

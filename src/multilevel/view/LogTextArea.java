@@ -8,10 +8,6 @@ package multilevel.view;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
@@ -19,8 +15,6 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
-import javax.swing.event.PopupMenuEvent;
-import javax.swing.event.PopupMenuListener;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultEditorKit;
 import javax.swing.text.SimpleAttributeSet;
@@ -48,7 +42,7 @@ public class LogTextArea extends JTextPane{
         
         Date now = new Date();
         String time = new SimpleDateFormat("[dd/MM/yyyy HH:mm:ss]").format(now);
-        super.setText(time + ": Command Line Area Initiated.\n");
+        super.setText(time + ": Welcome!\n");
         this.setCursor(new Cursor(Cursor.TEXT_CURSOR));
         
         //credits http://tiebing.blogspot.gr/2013/10/add-context-menu-copypaste-to-java.html

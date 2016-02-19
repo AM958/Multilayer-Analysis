@@ -106,6 +106,7 @@ public class MultilayerCNets {
         ui.getPageRankOptions2().getjButton2().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getPageRankOptions2().getjButton1().addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getTabbedPane11().getExportButton().addActionListener(new ExportTableListener(ui));
+        ui.getMenuItem(15).addActionListener(new ExportTableListener(ui));
     }
     
 }

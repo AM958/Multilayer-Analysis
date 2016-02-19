@@ -21,8 +21,10 @@ import edu.uci.ics.jung.visualization.picking.PickedState;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.geom.Arc2D;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import org.apache.commons.collections15.Transformer;
 import org.apache.commons.collections15.functors.ConstantTransformer;
 
 /**
@@ -87,11 +89,23 @@ public class RedrawGraphPaneWithLayout {
         
         gm = new DefaultModalGraphMouse();
 
+        Transformer vertexShape = new Transformer() {
+            @Override
+            public Object transform(Object i) {
+                Arc2D.Double arc = new Arc2D.Double(-4, -4, 12, 12, 0, 360, Arc2D.CHORD);
+		return arc;
+            }
+        };         
+        
         gm.setMode(ModalGraphMouse.Mode.TRANSFORMING);
         vv.setGraphMouse(gm);
         vv.getRenderContext().setVertexStrokeTransformer(new ConstantTransformer(new BasicStroke(0.1f)));
         vv.getRenderContext().setEdgeStrokeTransformer(new ConstantTransformer(new BasicStroke(0.8f)));
         vv.getRenderContext().setEdgeArrowStrokeTransformer(new ConstantTransformer(new BasicStroke(0.1f)));
+        vv.getRenderContext().setVertexShapeTransformer(vertexShape);
+        
+         
+              
        
         final PickedState<Integer> pickedState = vv.getPickedVertexState();
         return vv;
