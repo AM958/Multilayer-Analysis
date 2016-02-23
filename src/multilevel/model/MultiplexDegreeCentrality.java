@@ -43,11 +43,17 @@ public class MultiplexDegreeCentrality {
         for(int layerKey: mg.getLayerList().keySet()){
             G = mg.getLayerList().get(layerKey);
             directed = G.getDefaultEdgeType();
+            for (Edge e: G.getEdges()){
+                directed = G.getEdgeType(e);
+                break;
+            }
+            
             float degree;
             int currentVertexDegree;
             for(Vertex v: G.getVertices()){
 
-                if(directed == DIRECTED){
+                if(directed == EdgeType.DIRECTED){
+                    System.out.println("directed?");
                     if(inOrOut == true)
                         currentVertexDegree = G.inDegree(v);
                     else

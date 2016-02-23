@@ -72,6 +72,8 @@ public class SideTabbedPane extends javax.swing.JPanel {
         jTable4 = new javax.swing.JTable();
         ExportButton = new javax.swing.JButton();
 
+        setName("Info"); // NOI18N
+
         jTabbedPane1.setTabPlacement(javax.swing.JTabbedPane.RIGHT);
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(

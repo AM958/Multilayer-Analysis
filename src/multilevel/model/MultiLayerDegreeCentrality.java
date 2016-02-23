@@ -40,6 +40,10 @@ public class MultiLayerDegreeCentrality {
         for(int layerKey: mg.getLayerList().keySet()){
             G = mg.getLayerList().get(layerKey);
             directed = G.getDefaultEdgeType();
+            for (Edge e: G.getEdges()){
+                directed = G.getEdgeType(e);
+                break;
+            }
             float degree;
             int currentVertexDegree;
             for(Vertex v: G.getVertices()){
