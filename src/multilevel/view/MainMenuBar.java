@@ -18,6 +18,10 @@ public class MainMenuBar extends JMenuBar{
     private JMenu centralitiesMenu;
     private JMenu multiplexMenu;
     private JMenu multilayerMenu;
+    private JMenu multiplexDegreeMenu;
+    private JMenu multiplexCLDegreeMenu;
+    private JMenu multilayerDegreeMenu;
+    
     //private JMenu pciMenu;
     
     private MainMenuItem exitMenuItem;
@@ -36,6 +40,7 @@ public class MainMenuBar extends JMenuBar{
     private MainMenuItem multilayerInDegree;
     private MainMenuItem multilayerOutDegree;
     private MainMenuItem multilayerPCI;
+    private MainMenuItem multiplexUndirCLDC;
     
     
     public MainMenuBar(){
@@ -64,7 +69,9 @@ public class MainMenuBar extends JMenuBar{
         centralitiesMenu = new JMenu("Centralities");
         multiplexMenu = new JMenu("Multiplex Network");
         multilayerMenu = new JMenu ("Multi-layer Network");
-        
+        multiplexDegreeMenu = new JMenu ("Multiplex Degree Centrality");
+        multiplexCLDegreeMenu = new JMenu ("Multiplex Cross-layer Degree Centrality");
+        multilayerDegreeMenu = new JMenu ("Multi-layer Degree Centrality");
         
         exitMenuItem = new MainMenuItem("Exit", new javax.swing.ImageIcon(getClass().getResource("/img/process-stop.png")), "Exit");
         randDirectedGraphMenuItem = new MainMenuItem("Random Graph (D)", new javax.swing.ImageIcon(getClass().getResource("/img/view-refresh.png")), "Generate Random Directed Graph");
@@ -78,13 +85,16 @@ public class MainMenuBar extends JMenuBar{
         
         multiplexBetweenness = new MainMenuItem("Multiplex Betweenness", "Calculate Multiplex Betweenness Centrality");
         multiplexPageRank = new MainMenuItem("Multiplex Page Rank", "Calculate Multiplex Page Rank Centrality");
+        
         multiplexUndirDegree = new MainMenuItem("Multiplex Undirected Degree", "Calculate Multiplex Undirected Degree Centrality");
         multiplexOutDegree = new MainMenuItem("Multiplex Out-Degree", "Calculate Multiplex Out-Degree Centrality");
         multiplexInDegree = new MainMenuItem("Multiplex In-Degree", "Calculate Multiplex In-Degree Centrality");
         
-        multilayerUndirDegree = new MainMenuItem("Multi-layer Undirected Degree", "Calculate Multiplex Undirected Degree Centrality");
-        multilayerOutDegree = new MainMenuItem("Multi-layer Out-Degree", "Calculate Multiplex Out-Degree Centrality");
-        multilayerInDegree = new MainMenuItem("Multi-layer In-Degree", "Calculate Multiplex In-Degree Centrality");
+        multiplexUndirCLDC = new MainMenuItem("Multiplex Undirected C-L Degree", "Calculate Multiplex Undirected Degree Centrality");
+        
+        multilayerUndirDegree = new MainMenuItem("Multi-layer Undirected Degree", "Calculate Multi-layer Undirected Degree Centrality");
+        multilayerOutDegree = new MainMenuItem("Multi-layer Out-Degree", "Calculate Multi-layer Out-Degree Centrality");
+        multilayerInDegree = new MainMenuItem("Multi-layer In-Degree", "Calculate Multi-layer In-Degree Centrality");
 
         multilayerPCI = new MainMenuItem("Power Community Index", "Calculate Power Community Index");
 
@@ -107,18 +117,29 @@ public class MainMenuBar extends JMenuBar{
 
         multiplexMenu.add(multiplexBetweenness);
         multiplexMenu.add(multiplexPageRank);
-        multiplexMenu.add(new javax.swing.JToolBar.Separator());    
-        multiplexMenu.add(multiplexInDegree);
-        multiplexMenu.add(multiplexOutDegree);
-        multiplexMenu.add(new javax.swing.JToolBar.Separator());
-        multiplexMenu.add(multiplexUndirDegree);
+        multiplexMenu.add(new javax.swing.JToolBar.Separator()); 
+        multiplexMenu.add(multiplexDegreeMenu);
+        
+        multiplexCLDegreeMenu.add(multiplexUndirCLDC);
+        multiplexMenu.add(multiplexCLDegreeMenu);
+        
+        multiplexDegreeMenu.add(multiplexInDegree);
+        multiplexDegreeMenu.add(multiplexOutDegree);
+        multiplexDegreeMenu.add(new javax.swing.JToolBar.Separator());
+        multiplexDegreeMenu.add(multiplexUndirDegree);
+        
         centralitiesMenu.add(multiplexMenu);
+        
+        
+        
         addMenu(centralitiesMenu);
         
-        multilayerMenu.add(multilayerInDegree);
-        multilayerMenu.add(multilayerOutDegree);
-        multilayerMenu.add(new javax.swing.JToolBar.Separator());
-        multilayerMenu.add(multilayerUndirDegree);
+        multilayerMenu.add(multilayerDegreeMenu);
+        
+        multilayerDegreeMenu.add(multilayerInDegree);
+        multilayerDegreeMenu.add(multilayerOutDegree);
+        multilayerDegreeMenu.add(new javax.swing.JToolBar.Separator());
+        multilayerDegreeMenu.add(multilayerUndirDegree);
         
         multilayerMenu.add(new javax.swing.JToolBar.Separator());
         multilayerPCI.setActionCommand("PCI");
@@ -220,6 +241,13 @@ public class MainMenuBar extends JMenuBar{
      */
     public MainMenuItem getExportResultsMenuItem() {
         return exportResultsMenuItem;
+    }
+
+    /**
+     * @return the multiplexUndirCLDC
+     */
+    public MainMenuItem getMultiplexUndirCLDC() {
+        return multiplexUndirCLDC;
     }
     
 }

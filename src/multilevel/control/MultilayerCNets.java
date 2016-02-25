@@ -97,6 +97,7 @@ public class MultilayerCNets {
         ui.getMenuItem(14).addActionListener(new MultilayerPCIListener(ui));
         ui.getMenuItem(5).addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getMenuItem(10).addActionListener(new ExportGraphImageListener(ui));
+        ui.getMenuItem(16).addActionListener(new MultiplexCLDC(ui));
         ui.getSelectLayoutOKButton().addActionListener(new SelectLayoutListener(ui));
         ui.getSelectLayoutCancelButton().addActionListener(new SelectLayoutListener(ui));
         ui.getPciOpt().getPciOkButton().addActionListener(new MultilayerPCIListener(ui));

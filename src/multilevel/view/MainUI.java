@@ -418,7 +418,8 @@ public class MainUI extends javax.swing.JFrame {
                 return mainMenuBar3.getMultilayerPCI();
             case 15:
                 return mainMenuBar3.getExportResultsMenuItem();
-                    
+            case 16:
+                return mainMenuBar3.getMultiplexUndirCLDC();
             
             default:
                 return null;
@@ -492,7 +493,6 @@ public class MainUI extends javax.swing.JFrame {
      * @return the mg
      */
     public MultilevelSparseMultigraph getMg() {
-        System.out.println("MG get.");
         return mg;
     }
 
