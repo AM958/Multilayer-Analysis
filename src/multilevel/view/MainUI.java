@@ -490,7 +490,16 @@ public class MainUI extends javax.swing.JFrame {
                 return mainMenuBar3.getExportResultsMenuItem();
             case 16:
                 return mainMenuBar3.getMultiplexUndirCLDC();
-            
+            case 17:
+                return mainMenuBar3.getMultilayerUndirCLDC();
+            case 18:
+                return mainMenuBar3.getMultilayerInCLDC();
+            case 19:
+                return mainMenuBar3.getMultilayerOutCLDC();
+            case 20:
+                return mainMenuBar3.getMultiplexInCLDC();
+            case 21:
+                return mainMenuBar3.getMultiplexOutCLDC();    
             default:
                 return null;
         }

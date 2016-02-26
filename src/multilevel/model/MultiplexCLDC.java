@@ -30,11 +30,11 @@ public class MultiplexCLDC {
         this.layersToCount = layersToCount;
         this.normalized = normalized;
         this.cldc = new HashMap();
-        calc();
+        //calc();
         
     }
     
-    public final void calc(){
+    public final void calc() throws Exception{
         EdgeType directed;
         //for(int layerKey: mg.getLayerList().keySet()){
         G = mg.getLayerList().get(1);
@@ -43,23 +43,25 @@ public class MultiplexCLDC {
             directed = G.getEdgeType(e);
             break;
         }
-        
         for(Vertex v: G.getVertices()){
             List<Float> layerDegrees = new ArrayList<>();
             for(int layerKey: mg.getLayerList().keySet()){
                 if(directed == EdgeType.UNDIRECTED){
                     layerDegrees.add((float)mg.getLayerList().get(layerKey).degree(v));
                 }
-                else{
+                else if(directed == EdgeType.DIRECTED){
                     if(inOrOut == true)
                         layerDegrees.add((float)mg.getLayerList().get(layerKey).inDegree(v));
                     else
                         layerDegrees.add((float)mg.getLayerList().get(layerKey).outDegree(v));
                 }
+                else{
+                    throw new Exception("Error calculationg CLDC! Check parameters and try again.\n");
+                }
             }
             Collections.sort(layerDegrees);
             Collections.reverse(layerDegrees);
-            System.out.println(layerDegrees);
+            
             float cldcDeg = layerDegrees.get(layersToCount);
             cldc.put(v, cldcDeg);
         }
