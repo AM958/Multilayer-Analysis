@@ -46,6 +46,11 @@ public class MainUI extends javax.swing.JFrame {
         selectLayoutComboBox = new javax.swing.JComboBox();
         selectLayoutOKButton = new javax.swing.JButton();
         selectLayoutCancelButton = new javax.swing.JButton();
+        cldcDialog = new javax.swing.JDialog();
+        cldcCancel = new javax.swing.JButton();
+        cldcOK = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        cldcComboBox = new javax.swing.JComboBox();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -200,6 +205,55 @@ public class MainUI extends javax.swing.JFrame {
                 .addGap(0, 41, Short.MAX_VALUE))
         );
 
+        cldcDialog.setTitle("CLDC layers");
+        cldcDialog.setAlwaysOnTop(true);
+        cldcDialog.setMinimumSize(new java.awt.Dimension(155, 120));
+        cldcDialog.setModal(true);
+        cldcDialog.setPreferredSize(new java.awt.Dimension(155, 120));
+        cldcDialog.setResizable(false);
+
+        cldcCancel.setText("Cancel");
+
+        cldcOK.setText("OK");
+        cldcOK.setMaximumSize(new java.awt.Dimension(65, 23));
+        cldcOK.setMinimumSize(new java.awt.Dimension(65, 23));
+        cldcOK.setPreferredSize(new java.awt.Dimension(65, 23));
+
+        jLabel4.setText("Choose No of Layers");
+
+        javax.swing.GroupLayout cldcDialogLayout = new javax.swing.GroupLayout(cldcDialog.getContentPane());
+        cldcDialog.getContentPane().setLayout(cldcDialogLayout);
+        cldcDialogLayout.setHorizontalGroup(
+            cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cldcDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cldcDialogLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(60, 60, 60))
+                    .addGroup(cldcDialogLayout.createSequentialGroup()
+                        .addGroup(cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(cldcDialogLayout.createSequentialGroup()
+                                .addComponent(cldcOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cldcCancel))
+                            .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+        cldcDialogLayout.setVerticalGroup(
+            cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cldcDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cldcOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cldcCancel))
+                .addContainerGap())
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MultiLayer Complex Networks Analysis");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -231,6 +285,7 @@ public class MainUI extends javax.swing.JFrame {
         jDialog1.setLocationRelativeTo(this);
         layoutSelectionDialog.setLocationRelativeTo(this);
         errorDialog.setLocationRelativeTo(this);
+        cldcDialog.setLocationRelativeTo(this);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setFloatable(false);
@@ -323,6 +378,10 @@ public class MainUI extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cldcCancel;
+    private javax.swing.JComboBox cldcComboBox;
+    private javax.swing.JDialog cldcDialog;
+    private javax.swing.JButton cldcOK;
     private javax.swing.JDialog errorDialog;
     private javax.swing.JButton interfaceOpenButton;
     private javax.swing.JButton jButton10;
@@ -336,6 +395,7 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private multilevel.view.GraphFoundationPanel graphFoundationPanel1;
     private multilevel.view.LogTextArea logTxtArea1;
     private javax.swing.JPanel jPanel3;
@@ -578,6 +638,34 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JButton getSelectLayoutCancelButton() {
         return selectLayoutCancelButton;
+    }
+
+    /**
+     * @return the cldcDialog
+     */
+    public javax.swing.JDialog getCldcDialog() {
+        return cldcDialog;
+    }
+
+    /**
+     * @return the cldcCancel
+     */
+    public javax.swing.JButton getCldcCancel() {
+        return cldcCancel;
+    }
+
+    /**
+     * @return the cldcOK
+     */
+    public javax.swing.JButton getCldcOK() {
+        return cldcOK;
+    }
+
+    /**
+     * @return the cldcComboBox
+     */
+    public javax.swing.JComboBox getCldcComboBox() {
+        return cldcComboBox;
     }
 }
 

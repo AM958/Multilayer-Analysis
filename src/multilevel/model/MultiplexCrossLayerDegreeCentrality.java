@@ -62,7 +62,7 @@ public class MultiplexCrossLayerDegreeCentrality {
             Collections.sort(layerDegrees);
             Collections.reverse(layerDegrees);
             System.out.println(layerDegrees);
-            float cldcDeg = layerDegrees.get(layersToCount - 1);
+            float cldcDeg = layerDegrees.get(layersToCount);
             cldc.put(v, cldcDeg);
         }
         

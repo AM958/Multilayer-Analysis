@@ -69,9 +69,9 @@ public class MainMenuBar extends JMenuBar{
         centralitiesMenu = new JMenu("Centralities");
         multiplexMenu = new JMenu("Multiplex Network");
         multilayerMenu = new JMenu ("Multi-layer Network");
-        multiplexDegreeMenu = new JMenu ("Multiplex Degree Centrality");
-        multiplexCLDegreeMenu = new JMenu ("Multiplex Cross-layer Degree Centrality");
-        multilayerDegreeMenu = new JMenu ("Multi-layer Degree Centrality");
+        multiplexDegreeMenu = new JMenu ("Multiplex Degree");
+        multiplexCLDegreeMenu = new JMenu ("Multiplex Cross-layer Degree");
+        multilayerDegreeMenu = new JMenu ("Multi-layer Degree");
         
         exitMenuItem = new MainMenuItem("Exit", new javax.swing.ImageIcon(getClass().getResource("/img/process-stop.png")), "Exit");
         randDirectedGraphMenuItem = new MainMenuItem("Random Graph (D)", new javax.swing.ImageIcon(getClass().getResource("/img/view-refresh.png")), "Generate Random Directed Graph");
