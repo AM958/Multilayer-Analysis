@@ -97,13 +97,13 @@ public class MultilayerCNets {
         ui.getMenuItem(14).addActionListener(new MultilayerPCIListener(ui));
         ui.getMenuItem(5).addActionListener(new MultiplexPageRankOptionsListener(ui) );
         ui.getMenuItem(10).addActionListener(new ExportGraphImageListener(ui));
-        ui.getMenuItem(16).addActionListener(new MultiplexCLDC(ui));
+        ui.getMenuItem(16).addActionListener(new MultiplexCLDCListener(ui));
         ui.getSelectLayoutOKButton().addActionListener(new SelectLayoutListener(ui));
         ui.getSelectLayoutCancelButton().addActionListener(new SelectLayoutListener(ui));
         ui.getPciOpt().getPciOkButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciCancelButton().addActionListener(new MultilayerPCIListener(ui));
-        ui.getCldcOK().addActionListener(new MultiplexCLDC(ui));
-        ui.getCldcCancel().addActionListener(new MultiplexCLDC(ui));
+        ui.getCldcOK().addActionListener(new MultiplexCLDCListener(ui));
+        ui.getCldcCancel().addActionListener(new MultiplexCLDCListener(ui));
         ui.getPciOpt().getPciMethodComboBox().addActionListener(new pciTypeComboBoxListener(ui));
         ui.getMenuItem(9).addActionListener(new SelectLayoutDialogListener(ui));
         ui.getPageRankOptions2().getjButton2().addActionListener(new MultiplexPageRankOptionsListener(ui) );

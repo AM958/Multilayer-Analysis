@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultComboBoxModel;
 import multilevel.model.MultilevelSparseMultigraph;
-import multilevel.model.MultiplexCrossLayerDegreeCentrality;
+import multilevel.model.MultiplexCLDC;
 import multilevel.model.MultiplexDegreeCentrality;
 import multilevel.view.MainUI;
 import multilevel.view.SideTabbedPane;
@@ -18,13 +18,13 @@ import multilevel.view.SideTabbedPane;
  *
  * @author Spiros
  */
-public class MultiplexCLDC implements ActionListener{
+public class MultiplexCLDCListener implements ActionListener{
 
     MultilevelSparseMultigraph mg;
     MainUI parentUI;
     SideTabbedPane stp;
     
-    public MultiplexCLDC(MainUI parent){
+    public MultiplexCLDCListener(MainUI parent){
         this.parentUI = parent;
         this.stp = parent.getTabbedPane11();
     }
@@ -53,7 +53,7 @@ public class MultiplexCLDC implements ActionListener{
             }
             else if(ae.getActionCommand().equals("OK")){
                 parentUI.getCldcDialog().dispose();
-                MultiplexCrossLayerDegreeCentrality degreeC = new MultiplexCrossLayerDegreeCentrality(parentUI.getMg(), parentUI.getCldcComboBox().getSelectedIndex() , false);
+                MultiplexCLDC degreeC = new MultiplexCLDC(parentUI.getMg(), parentUI.getCldcComboBox().getSelectedIndex() , parentUI.getCldcNormalize().isSelected());
                 if(ae.getActionCommand().equals("Multiplex In-Degree")){
                     degreeC.setInOrOut(true);
                 }
@@ -64,7 +64,7 @@ public class MultiplexCLDC implements ActionListener{
                 //stp.setDegreeCentralityTab(degreeC.getDegreeCentrality(), degreeC.getAverageDegree());
                 stp.setCentralityTab(degreeC.getCldc(), "Cross Layer Degree");
                 //stp.getjLabel21().setText("Average Vertex Degree: " + degreeC.getAverageDegree());
-                stp.getjLabel25().setText("Degree Centrality");
+                stp.getjLabel25().setText("Cross Layer Degree Centrality");
                 parentUI.getMenuItem(15).setEnabled(true);
                 parentUI.getLogTxtArea1().append("Calculated Degree Centrality for each Vertex.\n");
             }

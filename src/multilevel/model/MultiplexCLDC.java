@@ -17,7 +17,7 @@ import java.util.Map;
  *
  * @author Spiros
  */
-public class MultiplexCrossLayerDegreeCentrality {
+public class MultiplexCLDC {
     private final MultilevelSparseMultigraph mg;
     private Graph<Vertex, Edge> G;
     private final Map<Vertex, Float> cldc;
@@ -25,15 +25,13 @@ public class MultiplexCrossLayerDegreeCentrality {
     private boolean inOrOut;
     private final boolean normalized;
     
-    public MultiplexCrossLayerDegreeCentrality(MultilevelSparseMultigraph mg, int layersToCount, boolean normalized) throws Exception{
+    public MultiplexCLDC(MultilevelSparseMultigraph mg, int layersToCount, boolean normalized) throws Exception{
         this.mg = mg;
         this.layersToCount = layersToCount;
         this.normalized = normalized;
         this.cldc = new HashMap();
         calc();
-        if(normalized){
-            normalize();
-        }
+        
     }
     
     public final void calc(){
@@ -64,6 +62,10 @@ public class MultiplexCrossLayerDegreeCentrality {
             System.out.println(layerDegrees);
             float cldcDeg = layerDegrees.get(layersToCount);
             cldc.put(v, cldcDeg);
+        }
+        
+        if(normalized){
+            normalize();
         }
         
     }

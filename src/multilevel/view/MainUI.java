@@ -51,6 +51,7 @@ public class MainUI extends javax.swing.JFrame {
         cldcOK = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         cldcComboBox = new javax.swing.JComboBox();
+        cldcNormalize = new javax.swing.JCheckBox();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -219,7 +220,10 @@ public class MainUI extends javax.swing.JFrame {
         cldcOK.setMinimumSize(new java.awt.Dimension(65, 23));
         cldcOK.setPreferredSize(new java.awt.Dimension(65, 23));
 
-        jLabel4.setText("Choose No of Layers");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Choose Num of Layers");
+
+        cldcNormalize.setText("Normalize");
 
         javax.swing.GroupLayout cldcDialogLayout = new javax.swing.GroupLayout(cldcDialog.getContentPane());
         cldcDialog.getContentPane().setLayout(cldcDialogLayout);
@@ -237,7 +241,10 @@ public class MainUI extends javax.swing.JFrame {
                                 .addComponent(cldcOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cldcCancel))
-                            .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(cldcDialogLayout.createSequentialGroup()
+                                .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cldcNormalize)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         cldcDialogLayout.setVerticalGroup(
@@ -246,8 +253,10 @@ public class MainUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addGroup(cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cldcComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cldcNormalize))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(cldcDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cldcOK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cldcCancel))
@@ -381,6 +390,7 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JButton cldcCancel;
     private javax.swing.JComboBox cldcComboBox;
     private javax.swing.JDialog cldcDialog;
+    private javax.swing.JCheckBox cldcNormalize;
     private javax.swing.JButton cldcOK;
     private javax.swing.JDialog errorDialog;
     private javax.swing.JButton interfaceOpenButton;
@@ -666,6 +676,13 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JComboBox getCldcComboBox() {
         return cldcComboBox;
+    }
+
+    /**
+     * @return the cldcNormalize
+     */
+    public javax.swing.JCheckBox getCldcNormalize() {
+        return cldcNormalize;
     }
 }
 
