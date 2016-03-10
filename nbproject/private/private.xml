@@ -5,10 +5,15 @@
         <group>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/control/MultilayerCNets.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/control/MultilayerPCIListener.java</file>
+            <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/model/MultiplexDegreeCentrality.java</file>
+            <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/view/MainMenuBar.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/model/MultiplexCLDC.java</file>
+            <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/control/MultiplexDegreeListener.java</file>
+            <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/model/MultiLayerDegreeCentrality.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/model/MultiLayerPCI.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/view/MainUI.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/control/MenuActionListener.java</file>
+            <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/model/MultilayerCLDC.java</file>
             <file>file:/D:/ΑΡΧΕΙΑ/DropBox/Dropbox/multilevel%20networks/MultilayerAnalysis/src/multilevel/control/MultiplexCLDCListener.java</file>
         </group>
     </open-files>

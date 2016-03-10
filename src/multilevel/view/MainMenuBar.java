@@ -22,6 +22,7 @@ public class MainMenuBar extends JMenuBar{
     private JMenu multiplexCLDegreeMenu;
     private JMenu multilayerDegreeMenu;
     private JMenu multilayerCLDegreeMenu;
+    private JMenu helpMenu;
     
     //private JMenu pciMenu;
     
@@ -47,6 +48,8 @@ public class MainMenuBar extends JMenuBar{
     private MainMenuItem multilayerUndirCLDC;
     private MainMenuItem multilayerInCLDC;
     private MainMenuItem multilayerOutCLDC;
+    private MainMenuItem aboutMenuItem;
+    private MainMenuItem helpMenuItem;
     
     
     public MainMenuBar(){
@@ -79,6 +82,7 @@ public class MainMenuBar extends JMenuBar{
         multiplexCLDegreeMenu = new JMenu ("Multiplex Cross-layer Degree");
         multilayerDegreeMenu = new JMenu ("Multi-layer Degree");
         multilayerCLDegreeMenu = new JMenu ("Multi-layer Cross-layer Degree");
+        helpMenu = new JMenu ("Help");
         
         exitMenuItem = new MainMenuItem("Exit", new javax.swing.ImageIcon(getClass().getResource("/img/process-stop.png")), "Exit");
         randDirectedGraphMenuItem = new MainMenuItem("Random Graph (D)", new javax.swing.ImageIcon(getClass().getResource("/img/view-refresh.png")), "Generate Random Directed Graph");
@@ -111,6 +115,9 @@ public class MainMenuBar extends JMenuBar{
 
         multilayerPCI = new MainMenuItem("Power Community Index", "Calculate Power Community Index");
 
+        helpMenuItem = new MainMenuItem("Show Help Info", null, null);
+        aboutMenuItem = new MainMenuItem("About ", null, null);        
+        
         fileMenu.add(openMenuItem);
         fileMenu.add(new javax.swing.JToolBar.Separator());
         fileMenu.add(exportGraphsMenuItem);
@@ -170,6 +177,9 @@ public class MainMenuBar extends JMenuBar{
         centralitiesMenu.add(multilayerMenu);
         addMenu(centralitiesMenu);
         
+        helpMenu.add(helpMenuItem);
+        helpMenu.add(aboutMenuItem);
+        addMenu(helpMenu);
         
         
     }  
@@ -305,6 +315,20 @@ public class MainMenuBar extends JMenuBar{
      */
     public MainMenuItem getMultilayerOutCLDC() {
         return multilayerOutCLDC;
+    }
+
+    /**
+     * @return the aboutMenuItem
+     */
+    public MainMenuItem getAboutMenuItem() {
+        return aboutMenuItem;
+    }
+
+    /**
+     * @return the helpMenuItem
+     */
+    public MainMenuItem getHelpMenuItem() {
+        return helpMenuItem;
     }
     
 }
