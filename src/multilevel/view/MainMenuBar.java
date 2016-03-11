@@ -178,7 +178,10 @@ public class MainMenuBar extends JMenuBar{
         addMenu(centralitiesMenu);
         
         helpMenu.add(helpMenuItem);
+        helpMenuItem.setActionCommand("help");
         helpMenu.add(aboutMenuItem);
+        aboutMenuItem.setActionCommand("about");
+        
         addMenu(helpMenu);
         
         

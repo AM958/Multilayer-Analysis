@@ -55,7 +55,7 @@ public class MainUI extends javax.swing.JFrame {
         helpDialog = new javax.swing.JDialog();
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
+        aboutTextPane = new javax.swing.JTextPane();
         graphFoundationPanel1 = new multilevel.view.GraphFoundationPanel();
         logTxtArea1 = new multilevel.view.LogTextArea();
         jPanel3 = new javax.swing.JPanel();
@@ -265,10 +265,20 @@ public class MainUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jButton1.setText("Close");
+        helpDialog.setAlwaysOnTop(true);
+        helpDialog.setMinimumSize(new java.awt.Dimension(640, 480));
+        helpDialog.setPreferredSize(new java.awt.Dimension(640, 480));
 
-        jTextPane1.setEditable(false);
-        jScrollPane1.setViewportView(jTextPane1);
+        jButton1.setText("Close");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        aboutTextPane.setEditable(false);
+        aboutTextPane.setBackground(getBackground());
+        jScrollPane1.setViewportView(aboutTextPane);
 
         javax.swing.GroupLayout helpDialogLayout = new javax.swing.GroupLayout(helpDialog.getContentPane());
         helpDialog.getContentPane().setLayout(helpDialogLayout);
@@ -313,7 +323,7 @@ public class MainUI extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
+            .addComponent(jSplitPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,6 +335,7 @@ public class MainUI extends javax.swing.JFrame {
         layoutSelectionDialog.setLocationRelativeTo(this);
         errorDialog.setLocationRelativeTo(this);
         cldcDialog.setLocationRelativeTo(this);
+        helpDialog.setLocationRelativeTo(this);
 
         jToolBar1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jToolBar1.setFloatable(false);
@@ -390,15 +401,15 @@ public class MainUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 273, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 686, Short.MAX_VALUE))
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE))
         );
 
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -415,8 +426,13 @@ public class MainUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_selectLayoutOKButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.helpDialog.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextPane aboutTextPane;
     private javax.swing.JButton cldcCancel;
     private javax.swing.JComboBox cldcComboBox;
     private javax.swing.JDialog cldcDialog;
@@ -448,7 +464,6 @@ public class MainUI extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JToolBar jToolBar1;
     private javax.swing.JDialog layoutSelectionDialog;
     private multilevel.view.LogGraphSplitPane logGraphSplitPane1;
@@ -533,7 +548,11 @@ public class MainUI extends javax.swing.JFrame {
             case 20:
                 return mainMenuBar3.getMultiplexInCLDC();
             case 21:
-                return mainMenuBar3.getMultiplexOutCLDC();    
+                return mainMenuBar3.getMultiplexOutCLDC();
+            case 22:
+                return mainMenuBar3.getAboutMenuItem();
+            case 23:
+                return mainMenuBar3.getHelpMenuItem();
             default:
                 return null;
         }
@@ -726,6 +745,20 @@ public class MainUI extends javax.swing.JFrame {
      */
     public javax.swing.JCheckBox getCldcNormalize() {
         return cldcNormalize;
+    }
+
+    /**
+     * @return the aboutTextPane
+     */
+    public javax.swing.JTextPane getAboutTextPane() {
+        return aboutTextPane;
+    }
+
+    /**
+     * @return the helpDialog
+     */
+    public javax.swing.JDialog getHelpDialog() {
+        return helpDialog;
     }
 }
 
