@@ -82,7 +82,7 @@ public class MultilayerCNets {
         ui.getMenuItem(2).addActionListener(new MenuActionListener(ui));
         ui.getMenuItem(3).addActionListener(new MenuActionListener(ui));
         ui.getInterfaceOpenButton().addActionListener(new MenuActionListener(ui));
-        ui.getNewButton().addActionListener(new MenuActionListener(ui));
+        //ui.getNewButton().addActionListener(new MenuActionListener(ui));
         ui.getTabbedPane11().getjTable3().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable3()));
         ui.getTabbedPane11().getjTable2().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable2()));
         ui.getTabbedPane11().getjTable4().getSelectionModel().addListSelectionListener(new TableSelectionListener(ui, ui.getTabbedPane11().getjTable4()));
@@ -109,6 +109,7 @@ public class MultilayerCNets {
         ui.getSelectLayoutCancelButton().addActionListener(new SelectLayoutListener(ui));
         ui.getPciOpt().getPciOkButton().addActionListener(new MultilayerPCIListener(ui));
         ui.getPciOpt().getPciCancelButton().addActionListener(new MultilayerPCIListener(ui));
+        ui.getNewButton().addActionListener(new newFileListener(ui));
         //ui.getCldcOK().addActionListener(new MultiplexCLDCListener(ui));
         //ui.getCldcCancel().addActionListener(new MultiplexCLDCListener(ui));
         ui.getPciOpt().getPciMethodComboBox().addActionListener(new pciTypeComboBoxListener(ui));

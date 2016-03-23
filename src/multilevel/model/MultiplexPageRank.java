@@ -38,7 +38,6 @@ public class MultiplexPageRank {
         this.alpha = alpha;
         this.beta = beta;
         this.gamma = gamma;
-        System.out.println("hiho");
         this.X = new HashMap();
         this.X_prev = new HashMap();
         this.vertexCount = mg.getLayerList().get(1).getVertexCount();
